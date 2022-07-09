@@ -12,6 +12,8 @@ jmap查看内存 实例信息 jmap -dump 或者说 看 jmap -histo 实例信息
 -XX:HeapDumpPath=/tmp/heapdump.hprof 指定输出到某个问题 
 还可以-XX:OnOutOfMemoryError="sh ~/test.sh"  参数允许用户指定当出现oom时，指定某个脚本来完成一些动作
 
+拿到dump文件可以用 MAT/JHAT/JVISUALVM分析
+
 jstat 看GC实时情况
 
 
