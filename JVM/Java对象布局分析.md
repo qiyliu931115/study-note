@@ -1,0 +1,36 @@
+JAVA对象布局分析： java对象8位的倍数 不够的话补齐
+
+
+Jol-core：
+``````
+<dependency>
+    <groupId>org.openjdk.jol</groupId>
+    <artifactId>jol-core</artifactId>
+    <version>0.9</version>
+</dependency>
+``````
+
+类型指针（klass pointer）：
+内存中寻址
+JVM参数可设置 UseCompressedOops  4字节 32比特位bit
+内存超过32G 膨胀到8字节
+
+Mark Word
+标记文字   
+64位 8字节
+1 锁信息 无锁 偏向锁 轻量锁 重量级锁等
+2 GC信息 比如分代 年龄
+(identity) hash code
+
+padding 对齐填充字节
+
+如果是对象 那就是 klass pointer 类型指针
+MarkWord  1 锁信息 2 GC信息 分代 年龄  3 hash code
+padding 填充字节
+instanceOfData 实例信息
+
+如果是数组 那就是 klass pointer 类型指针
+MarkWord  1 锁信息 2 GC信息 分代 年龄  3 hash code
+padding 填充字节
+instanceOfData 实例信息
+length 长度

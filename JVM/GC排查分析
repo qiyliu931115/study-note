@@ -1,0 +1,11 @@
+常用命令：
+
+
+
+https://www.bbsmax.com/A/lk5avmmPd1/
+
+jstack 查看线程信息
+
+jmap查看内存 实例信息 jmap -dump 或者说 看 jmap -histo 实例信息
+
+jstat 看GC实时情况
