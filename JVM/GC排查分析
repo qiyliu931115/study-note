@@ -1,6 +1,12 @@
 -X 
 -XX
 
+CPU暴增 使用TOP -H 拿到进程号
+
+分析是业务线程还是GC线程
+GC线程占用高 那么要排查为什么会有大量回收的问题
+下载dump文件 查看哪些类型的对象非常多 再进一步看使用这些对象的业务逻辑
+
 常用命令：
 
 https://www.bbsmax.com/A/lk5avmmPd1/
@@ -18,3 +24,5 @@ jstat 看GC实时情况
 
 
 阿里的arthas 有仪表盘：dashboard
+
+
