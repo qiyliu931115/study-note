@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c65c813c-b218-4928-a4b9-603f8d076789" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/JVM/Java内存.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/多线程 synchronized" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JVM/GC排查分析" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/GC排查分析" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +23,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2BiemdGBYK9s0NYz7BoUdxifu0L" />
   <component name="ProjectLevelVcsManager">
@@ -29,16 +47,18 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -52,7 +72,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657393493128</updated>
-      <workItem from="1657393495025" duration="4700000" />
+      <workItem from="1657393495025" duration="5368000" />
+      <workItem from="1657543334422" duration="6218000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657393697470</created>
@@ -103,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657416326444</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit">
+      <created>1657417575780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657417575780</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,9 +147,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
