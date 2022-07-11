@@ -54,15 +54,15 @@ synchronized关键字就是对MarkWord的修改
 偏向锁 自旋锁 都是用户空间锁
 重量级锁需要向内核申请
 
-![img.png](img.png)
+![img.png](../img/img.png)
 
 偏向锁 空杯归零
 
-![img_1.png](img_1.png)
+![img_1.png](../img/img_1.png)
 
 把线程ID设置到MarkWord
 
-![img_2.png](img_2.png)
+![img_2.png](../img/img_2.png)
 
 如果有两个线程  每个线程都有自己的线程栈
 在栈内生成lock record 锁记录
@@ -71,12 +71,12 @@ synchronized关键字就是对MarkWord的修改
 自己可以再次获取自己的内部的锁。比如有线程A获得了某对象的锁,此时这个时候锁还没有释放,当其再次想获取这个对象的锁的时候还是可以获取的
 ) 都会有一个lockRecord
 
-![img_3.png](img_3.png)
+![img_3.png](../img/img_3.png)
 
 自旋锁要占CPU 线程过多资源占用激烈
 java preSpinLock 默认10 之前是要设置的 自旋次数
 现在是adaptive cas 自适应自旋
-![img_4.png](img_4.png)
+![img_4.png](../img/img_4.png)
 
 
 重量级锁（重量级锁有队列）
@@ -94,6 +94,6 @@ entrylist waitset
 jvm偏向锁默认4s才会打开偏向锁
 因为jvm启动过程中知道有很多东西在处理 所以开始不用偏向锁
 
-![img_5.png](img_5.png)
+![img_5.png](../img/img_5.png)
 
 偏向锁 如果wait时间过长 直接会升级重量级锁
