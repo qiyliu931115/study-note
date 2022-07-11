@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c65c813c-b218-4928-a4b9-603f8d076789" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/JVM/Java对象怎么分配.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/dlc需不需要加volatile.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img7.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +41,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JVM" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study\JVM" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study\img" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -65,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657393493128</updated>
       <workItem from="1657393495025" duration="5368000" />
-      <workItem from="1657543334422" duration="7547000" />
+      <workItem from="1657543334422" duration="9576000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657393697470</created>
@@ -130,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657549679505</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit">
+      <created>1657551359752</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657551359752</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
