@@ -27,3 +27,8 @@ JIT编译器 （JIT compiler）
 二次编译 源文件编译成字节码文件，再通过JIT转成机器指令，对于热点 频繁调用的指令，JIT会缓存起来
 
 ![img_1.png](img/img_12.png)
+
+基于栈式架构（Java虚拟机） 
+
+
+和寄存器架构（PC，Android）
