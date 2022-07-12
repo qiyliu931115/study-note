@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c65c813c-b218-4928-a4b9-603f8d076789" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/JVM/JDK,JVM结构.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JVM/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JVM/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JVM/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JVM/root search，垃圾回收算法.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/img8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img/img13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img/img_12.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JVM/Java对象怎么分配.md" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/Java对象怎么分配.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JVM/JDK,JVM结构.md" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/JDK,JVM结构.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +53,8 @@
       <recent name="D:\study\JVM" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\studyNote\JVM\img" />
+      <recent name="D:\code\studyNote\JVM" />
       <recent name="D:\code\studyNote\img" />
       <recent name="D:\code\studyNote\img8" />
       <recent name="D:\study\img" />
@@ -88,7 +86,7 @@
       <workItem from="1657393495025" duration="5368000" />
       <workItem from="1657543334422" duration="9747000" />
       <workItem from="1657588787011" duration="327000" />
-      <workItem from="1657589298699" duration="3705000" />
+      <workItem from="1657589298699" duration="4461000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657393697470</created>
@@ -167,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657560964059</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit">
+      <created>1657593149566</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657593149566</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
