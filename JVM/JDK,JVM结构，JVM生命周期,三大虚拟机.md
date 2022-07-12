@@ -17,7 +17,7 @@ JDK - JRE -JVM
 执行引擎：
 
 解释器（interpreter） 
-JIT编译器 （JIT compiler）
+JIT即时编译器 （JIT compiler）
 垃圾回收器（GC）
 
 
@@ -34,3 +34,28 @@ JIT编译器 （JIT compiler）
 
 和寄存器架构（PC，Android）
 寄存器 的指令更少
+
+JVM启动-执行-结束
+
+启动是通过类引导器创建初始类完成
+
+![img.png](img/img14.png)
+
+初始类不是object类，object也是引导类加载器加载的
+
+![img.png](img/img15.png)
+
+最早的是sun classic vm
+
+![img.png](img/img16.png)
+
+![img_1.png](img/img17.png)
+
+hotspot 
+热点探测 计数器探测 多处引用 被循环调用的方法
+将其编译成机器指令缓存到方法区的Code Cache
+![img.png](img/img18.png)
+
+![img_1.png](img/img_19.png)
+
+![img.png](img/img20.png)
