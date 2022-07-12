@@ -29,6 +29,8 @@ JIT编译器 （JIT compiler）
 ![img_1.png](img/img_12.png)
 
 基于栈式架构（Java虚拟机） 
-
+跨平台性好，指令集小，但是指令多
+执行性能比寄存器差
 
 和寄存器架构（PC，Android）
+寄存器 的指令更少
