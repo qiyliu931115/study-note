@@ -3,6 +3,6 @@
 且无外部引用（逃逸分析）
 可以分配到栈上
 
-TLAB 本地线程分配缓冲
+TLAB 本地线程分配缓冲 eden区 每个线程内单独的空间 不是公共空间
 
-![img.png](../img/img6.png)
+![img.png](img/img6.png)

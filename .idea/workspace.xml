@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c65c813c-b218-4928-a4b9-603f8d076789" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/JVM/dlc需不需要加volatile.md" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/dlc需不需要加volatile.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/JDK,JVM结构.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JVM/root search，垃圾回收算法.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/img8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JVM/Java对象怎么分配.md" beforeDir="false" afterPath="$PROJECT_DIR$/JVM/Java对象怎么分配.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +44,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JVM" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\study\JVM" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\studyNote\img" />
+      <recent name="D:\code\studyNote\img8" />
       <recent name="D:\study\img" />
     </key>
   </component>
@@ -74,6 +87,8 @@
       <updated>1657393493128</updated>
       <workItem from="1657393495025" duration="5368000" />
       <workItem from="1657543334422" duration="9747000" />
+      <workItem from="1657588787011" duration="327000" />
+      <workItem from="1657589298699" duration="3705000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1657393697470</created>

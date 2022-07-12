@@ -4,7 +4,7 @@
 
 volatile 变量
 
-![img.png](../img/img7.png)
+![img.png](img/img7.png)
 
 三个保证 可见性 顺序性 原子性
 
