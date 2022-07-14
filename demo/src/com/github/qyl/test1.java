@@ -10,6 +10,6 @@ public class test1 extends parent {
     public synchronized void method1() {
         System.out.println("sss");
         int i= 0;
-        i++;
+        i = i + 1;
     }
 }
