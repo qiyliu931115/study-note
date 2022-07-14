@@ -1,9 +1,9 @@
 package com.github.qyl;
 
-public class MyThread1  extends Thread {
+public class join  extends Thread {
     private String name;
 
-    public MyThread1(String name) {
+    public join(String name) {
         this.name = name;
     }
     @Override
@@ -15,9 +15,9 @@ public class MyThread1  extends Thread {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        MyThread1 myThreadA = new MyThread1("A");
-        MyThread1 myThreadB = new MyThread1("B");
-        MyThread1 myThreadC = new MyThread1("C");
+        join myThreadA = new join("A");
+        join myThreadB = new join("B");
+        join myThreadC = new join("C");
         myThreadA.start();
         /**join的意思是使得放弃当前线程的执行，并返回对应的线程，例如下面代码的意思就是：
          程序在main线程中调用t1线程的join方法，则main线程放弃cpu控制权，并返回t1线程继续执行直到线程t1执行完毕
