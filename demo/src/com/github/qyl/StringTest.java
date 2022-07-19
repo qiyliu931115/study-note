@@ -15,7 +15,8 @@ public class StringTest {
 
 
         String s5 = new String("1");
+        String intern = s5.intern();
         String s6 = "1";
-        System.out.println(s5 == s6);
+        System.out.println(intern == s6);
     }
 }
