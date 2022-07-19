@@ -1,8 +1,10 @@
 package com.github.qyl;
 
+import java.util.concurrent.TimeUnit;
+
 public class StringTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String s = new String("1");
         s.intern();
         String s2 = "1";
@@ -18,5 +20,7 @@ public class StringTest {
         String intern = s5.intern();
         String s6 = "1";
         System.out.println(intern == s6);
+
+        TimeUnit.SECONDS.sleep(600);
     }
 }
