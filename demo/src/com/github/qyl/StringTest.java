@@ -12,5 +12,10 @@ public class StringTest {
         s3.intern();
         String s4 = "12";
         System.out.println(s3 == s4); //true
+
+
+        String s5 = new String("1");
+        String s6 = "1";
+        System.out.println(s5 == s6);
     }
 }
