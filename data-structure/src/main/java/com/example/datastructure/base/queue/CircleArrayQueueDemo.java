@@ -19,8 +19,12 @@ public class CircleArrayQueueDemo {
             System.out.println("a:添加数据到队列");
             System.out.println("g:获取数据");
             System.out.println("h:查看队列头的数据");
+            System.out.println("r:查看队列尾的数据");
             key = scanner.next().charAt(0);
             switch (key) {
+                case 'r':
+                    System.out.printf("队列尾的数据是%d\na", arrayQueue.getRear());
+                    break;
                 case 's':
                     arrayQueue.showQueue();
                     break;
@@ -74,7 +78,7 @@ class CircleArrayQueue {
     }
 
     public boolean isFull() {
-        return (rear + 1) % maxSize == front;
+        return (rear + 1) % maxSize == front; // rear = 2 front =0 maxSize =3   （2+1）% 3 = 0
     }
 
     public boolean isEmpty() {
@@ -99,6 +103,7 @@ class CircleArrayQueue {
         int temp = data[front];
         front = (front + 1) % maxSize; //如果是加1 一直加会数组越界
         return temp;
+
     }
 
     public void showQueue() {
@@ -124,6 +129,14 @@ class CircleArrayQueue {
             throw new RuntimeException("队列没数据");
         }
         return data[front];
+    }
+
+    public int getRear() {
+        if (isEmpty()) {
+            throw new RuntimeException("队列没数据");
+        }
+        // 1 2 3    1 2 3 4
+        return data[(rear - 1 + maxSize) % maxSize];
     }
 
 }
