@@ -4,27 +4,41 @@ public class SingleLinkedListDemo {
 
     public static void main(String[] args) {
         //创建节点
-        HeroNode heroNode1 = new HeroNode(1, "宋江", "及时雨");
-        HeroNode heroNode2 = new HeroNode(2, "卢俊义", "玉麒麟");
-        HeroNode heroNode3 = new HeroNode(3, "吴用", "智多星");
-        HeroNode heroNode4 = new HeroNode(4, "林冲", "豹子头");
+        HeroNode heroNode1 = new HeroNode(-3, "宋江", "及时雨");
+        HeroNode heroNode2 = new HeroNode(5, "卢俊义", "玉麒麟");
+        HeroNode heroNode3 = new HeroNode(-99, "吴用", "智多星");
+        //HeroNode heroNode4 = new HeroNode(9, "林冲", "豹子头");
         SingleLinkedList singleLinkedList = new SingleLinkedList();
-//        singleLinkedList.add(heroNode1);
-//        singleLinkedList.add(heroNode2);
-//        singleLinkedList.add(heroNode3);
-//        singleLinkedList.add(heroNode4);
+        singleLinkedList.add(heroNode1);
+        singleLinkedList.add(heroNode2);
+        singleLinkedList.add(heroNode3);
+        //singleLinkedList.add(heroNode4);
 
 
-        singleLinkedList.addBySort(heroNode1);
-        singleLinkedList.addBySort(heroNode4);
-        singleLinkedList.addBySort(heroNode3);
-        singleLinkedList.addBySort(heroNode2);
+//        singleLinkedList.addBySort(heroNode1);
+//        singleLinkedList.addBySort(heroNode4);
+//        singleLinkedList.addBySort(heroNode3);
+//        singleLinkedList.addBySort(heroNode2);
         //singleLinkedList.addBySort(heroNode2);
 
+//        singleLinkedList.list();
+//        HeroNode heroNode5= new HeroNode(2, "小卢", "玉麒麟~~");
+//        singleLinkedList.update(heroNode5);
+//        System.out.println("修改后的链表情况");
+//        singleLinkedList.list();
+
+
+        singleLinkedList.del(-3);
+        System.out.println("删除后链表的情况");
         singleLinkedList.list();
-        HeroNode heroNode5= new HeroNode(2, "小卢", "玉麒麟~~");
-        singleLinkedList.update(heroNode5);
-        System.out.println("修改后的链表情况");
+        singleLinkedList.del(4);
+        System.out.println("删除后链表的情况");
+        singleLinkedList.list();
+        singleLinkedList.del(2);
+        System.out.println("删除后链表的情况");
+        singleLinkedList.list();
+        singleLinkedList.del(3);
+        System.out.println("删除后链表的情况");
         singleLinkedList.list();
     }
 }
@@ -129,18 +143,25 @@ class SingleLinkedList {
         }
     }
 
-    public void del (HeroNode delNode) {
-        HeroNode temp = head.next;
+    public void del (int no) {
+        HeroNode temp = head;//temp节点找打待删除的前一个节点
+        boolean flag = false;//是否找到待删除的节点
 
         while (true) {
-            if (temp == null) {
-                temp = temp.next;
-            } else if (delNode.no > temp.no) {
-                temp = temp.next.next;
+            if (temp.next == null) {
+               break;
+            } else if (temp.next.no==no) {//找到待删除的前一个节点
+                flag = true;
                 break;
             }
             temp = temp.next;
         }
+        if (flag) {
+            temp.next = temp.next.next;
+        } else {
+            System.out.printf("要删除的节点不存在%d\n", no);
+        }
+
     }
 
 
