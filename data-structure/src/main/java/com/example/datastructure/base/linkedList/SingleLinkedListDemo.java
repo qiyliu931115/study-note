@@ -129,6 +129,20 @@ class SingleLinkedList {
         }
     }
 
+    public void del (HeroNode delNode) {
+        HeroNode temp = head.next;
+
+        while (true) {
+            if (temp == null) {
+                temp = temp.next;
+            } else if (delNode.no > temp.no) {
+                temp = temp.next.next;
+                break;
+            }
+            temp = temp.next;
+        }
+    }
+
 
 }
 
