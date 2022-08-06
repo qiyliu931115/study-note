@@ -1,5 +1,7 @@
 package com.example.datastructure.base.linkedList;
 
+import java.util.Stack;
+
 public class SingleLinkedListDemo {
 
     public static void main(String[] args) {
@@ -21,9 +23,12 @@ public class SingleLinkedListDemo {
         System.out.println("原来链表的情况");
         singleLinkedList.list();
 
-        System.out.println("反转后的情况");
-        reverseList(singleLinkedList.getHead());
-        singleLinkedList.list();
+//        System.out.println("反转后的情况");
+//        reverseList(singleLinkedList.getHead());
+//        singleLinkedList.list();
+
+        System.out.println("测试单链表逆序打印");
+        reversePrint(singleLinkedList.getHead());
 
 //        System.out.println("链表中倒数第[1]的节点:" + getKthFromEnd(singleLinkedList.getHead(), 1));
 //
@@ -84,6 +89,21 @@ public class SingleLinkedListDemo {
         return length;
     }
 
+    public static void reversePrint(HeroNode heroNode) {
+        if (heroNode.next == null) {
+            return;
+        }
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = heroNode.next;
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
+
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());
+        }
+    }
 
     public static void reverseList (HeroNode head) {
 
