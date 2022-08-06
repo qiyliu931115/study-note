@@ -4,43 +4,133 @@ public class SingleLinkedListDemo {
 
     public static void main(String[] args) {
         //创建节点
-        HeroNode heroNode1 = new HeroNode(-3, "宋江", "及时雨");
-        HeroNode heroNode2 = new HeroNode(5, "卢俊义", "玉麒麟");
-        HeroNode heroNode3 = new HeroNode(-99, "吴用", "智多星");
-        //HeroNode heroNode4 = new HeroNode(9, "林冲", "豹子头");
+        HeroNode heroNode1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode heroNode2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode heroNode3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode heroNode4 = new HeroNode(4, "林冲", "豹子头");
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         singleLinkedList.add(heroNode1);
+        System.out.printf("链表的长度%d\n", singleLinkedList.getLength());
         singleLinkedList.add(heroNode2);
+        System.out.printf("链表的长度%d\n", singleLinkedList.getLength());
         singleLinkedList.add(heroNode3);
-        //singleLinkedList.add(heroNode4);
+        System.out.printf("链表的长度%d\n", singleLinkedList.getLength());
+        singleLinkedList.add(heroNode4);
+        System.out.printf("链表的长度%d\n", singleLinkedList.getLength());
 
+        System.out.println("原来链表的情况");
+        singleLinkedList.list();
 
+        System.out.println("反转后的情况");
+        reverseList(singleLinkedList.getHead());
+        singleLinkedList.list();
+
+//        System.out.println("链表中倒数第[1]的节点:" + getKthFromEnd(singleLinkedList.getHead(), 1));
+//
+//        System.out.println("链表中倒数第[2]的节点:" + getKthFromEnd(singleLinkedList.getHead(), 2));
+//
+//        System.out.println("链表中倒数第[3]的节点:" + getKthFromEnd(singleLinkedList.getHead(), 3));
+//
+//        System.out.println("链表中倒数第[4]的节点:" + getKthFromEnd(singleLinkedList.getHead(), 4));
+//
+//
+//
+//
+//        System.out.printf("链表的长度%d\n", getLength(singleLinkedList.getHead()));
+//
+//
 //        singleLinkedList.addBySort(heroNode1);
 //        singleLinkedList.addBySort(heroNode4);
 //        singleLinkedList.addBySort(heroNode3);
 //        singleLinkedList.addBySort(heroNode2);
-        //singleLinkedList.addBySort(heroNode2);
-
+//        singleLinkedList.addBySort(heroNode2);
+//
 //        singleLinkedList.list();
 //        HeroNode heroNode5= new HeroNode(2, "小卢", "玉麒麟~~");
 //        singleLinkedList.update(heroNode5);
 //        System.out.println("修改后的链表情况");
 //        singleLinkedList.list();
-
-
-        singleLinkedList.del(-3);
-        System.out.println("删除后链表的情况");
-        singleLinkedList.list();
-        singleLinkedList.del(4);
-        System.out.println("删除后链表的情况");
-        singleLinkedList.list();
-        singleLinkedList.del(2);
-        System.out.println("删除后链表的情况");
-        singleLinkedList.list();
-        singleLinkedList.del(3);
-        System.out.println("删除后链表的情况");
-        singleLinkedList.list();
+//
+//
+//        singleLinkedList.del(1);
+//        System.out.println("删除后链表的情况");
+//        singleLinkedList.list();
+//        System.out.printf("链表的长度%d\n", getLength(singleLinkedList.getHead()));
+//        singleLinkedList.del(4);
+//        System.out.println("删除后链表的情况");
+//        singleLinkedList.list();
+//        System.out.printf("链表的长度%d\n", getLength(singleLinkedList.getHead()));
+//        singleLinkedList.del(2);
+//        System.out.println("删除后链表的情况");
+//        singleLinkedList.list();
+//        System.out.printf("链表的长度%d\n", getLength(singleLinkedList.getHead()));
+//        singleLinkedList.del(3);
+//        System.out.println("删除后链表的情况");
+//        singleLinkedList.list();
+//        System.out.printf("链表的长度%d\n", getLength(singleLinkedList.getHead()));
     }
+
+
+    public static int getLength (HeroNode heroNode) {
+        if (heroNode.next == null) {
+            return 0;
+        }
+        int length = 0;
+        HeroNode temp = heroNode.next;
+        while (temp != null) {
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
+
+    public static void reverseList (HeroNode head) {
+
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+
+        //定义辅助指针
+        HeroNode temp  = head.next;
+
+        HeroNode next = null;//指向当前节点下一个节点
+
+        HeroNode reverseHead = new HeroNode(0,"","");
+
+        //从头遍历原来的链表 ，每遍历一个放到 reverseHead最前面
+
+        while (temp != null) {
+            next = temp.next;//暂时保存当前节点的下一个节点
+
+            temp.next = reverseHead.next; //将temp下一个节点指向新链表的最前端
+
+            reverseHead.next = temp; //将temp连接到新的链表上
+
+            temp = next;//让temp指向下个位置
+        }
+        //将head.next指向reverseHead.next
+        head.next = reverseHead.next;
+
+    }
+
+    public static HeroNode getKthFromEnd (HeroNode heroNode, int k) {
+        //获取链表长度
+        int length = getLength(heroNode);
+        //如果K小于1 或者K大于长度 返回null
+        if (k < 1 || k > length) {
+            return null;
+        }
+
+        HeroNode temp = heroNode.next;
+        //for循环 遍历  //
+        for (int i = 0; i < length - k ; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+
 }
 
 
@@ -50,6 +140,10 @@ class SingleLinkedList {
     //初始化头节点 头节点不要动
 
     private  HeroNode head = new HeroNode(0, "", "");
+
+    public HeroNode getHead(){
+        return head;
+    }
 
 
     //不考虑编号顺序时 找到链表的最后节点 将最后节点的next指向新的节点
@@ -100,6 +194,7 @@ class SingleLinkedList {
     //显示链表 遍历
     public void list () {
         if (head.next == null){
+            System.out.println("链表为空");
             return;
         }
         //head不能动 需要辅助节点
@@ -161,8 +256,22 @@ class SingleLinkedList {
         } else {
             System.out.printf("要删除的节点不存在%d\n", no);
         }
-
     }
+
+
+    public int getLength () {
+        if (head.next == null) {
+            return 0;
+        }
+        int length = 0;
+        HeroNode temp = head.next;
+        while (temp != null) {
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
 
 
 }
@@ -180,6 +289,11 @@ class HeroNode {
         this.name = name;
         this.no = no;
         this.nikeName = nikeName;
+
+    }
+
+    public HeroNode() {
+
 
     }
 
