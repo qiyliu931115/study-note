@@ -5,9 +5,9 @@ public class Josepfu {
     public static void main(String[] args) {
 
         CircleSingletLinkedList circleSingletLinkedList = new CircleSingletLinkedList();
-        circleSingletLinkedList.addBoy(50);
+        circleSingletLinkedList.addBoy(5);
         circleSingletLinkedList.showBoy();
-
+        circleSingletLinkedList.countBoy(1, 2,5); //2 4 1 5 3
     }
 }
 
@@ -76,6 +76,32 @@ class CircleSingletLinkedList {
             }
             helper = helper.getNext();
         }
+
+        //小孩报数k时，让 helper和first 移动k-1次(从第二位开始数 first从1到2移动一次) 所以是K-1
+
+        for (int j = 0;j < startNo -1; j++) {
+            first = first.getNext();
+            helper = helper.getNext();
+        }
+
+        //移动 countNum 次数，让 让 helper和first 移动m-1次 直到出圈
+
+        while (true) {
+            if (helper == first) { //说明圈中只有一个节点
+                break;
+            }
+
+            for (int j = 0;j < countNum -1; j++) {
+                first = first.getNext();
+                helper = helper.getNext();
+            }
+            //这是first指向的节点就是要出圈的节点
+            System.out.printf("小孩%d出圈\n",first.getNo());
+            //将first这个节点出圈
+            first = first.getNext();
+            helper.setNext(first);
+        }
+        System.out.printf("最后留在圈中的小孩编号是%d\n", first.getNo());
     }
 }
 
