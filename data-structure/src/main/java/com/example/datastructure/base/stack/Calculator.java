@@ -4,7 +4,7 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-        String expression = "7+2*6-4";
+        String expression = "7*2*2-5+1-5+3-4";
 
         ArrayStack2 numStack = new ArrayStack2(10);
         ArrayStack2 operStack = new ArrayStack2(10);
@@ -15,6 +15,8 @@ public class Calculator {
         int oper = 0;
         int res = 0;
         char ch = ' '; //每次扫描得到的char保存到ch
+
+        String keepNum = ""; //拼接多位数
         //循环扫描expression
         while (true) {
             //依次扫描expression 每一个字符
@@ -45,8 +47,29 @@ public class Calculator {
                     }
                 }
             } else {
-                //是数字
-                numStack.push(ch - 48); //'1' => 1
+                //是数字 入数栈
+
+                //处理多位数 不能发现是一个数就立即入栈 可能是多位数
+                //numStack.push(ch - 48); //'1' => 1
+
+                //需要向 expression 的后一位 再看一下 如果是数字 接着扫描 如果是符号再入栈
+
+                //需要定义一个变量
+                keepNum = keepNum + ch;
+
+                //如果ch是expression的最后一位，就直接入数栈
+                if (index == expression.length() - 1) {
+                    numStack.push(Integer.parseInt(keepNum));
+                } else {
+                    //判断下个字符是不是数字 如果是数字 继续扫描 如果是运算符 则入栈
+                    if (operStack.isOper(expression.substring(index + 1, index + 2).charAt(0))) {
+                        //是操作符 入栈
+                        numStack.push(Integer.parseInt(keepNum));
+                        // 重要的 ！！！
+                        keepNum = "";
+                    }
+                }
+
             }
             //让index+1 并判断是否扫描到expression最后
             index++;
