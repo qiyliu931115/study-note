@@ -6,15 +6,16 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 逆波兰表达式
+ * 逆波兰表达式 后缀表达式
  */
 public class PolandNotation {
 
     public static void main(String[] args) {
 
-        // (3+4)*5-6 =》3 4 + 5 * 6 +
+        // (30+4)*5-6 =》30 4 + 5 * 6 +
+        // 4 * 5 - 8 + 60  + 8 / 2 => 4 5 * 8 - 60 + 8 2 / +
         //为了方便 逆波兰表达式 数字 符号 空格 隔开
-        String  suffixExpression = "3 4 + 5 * 6 -";
+        String  suffixExpression = "4 5 * 8 - 60 + 8 2 / +";
         //思路
         // 1 先将 suffix expression 放入ArrayList中
         // 2 将 ArrayList传递给一个方法 遍历 ArrayList 配合栈完成计算
