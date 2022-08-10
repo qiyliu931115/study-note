@@ -1,6 +1,5 @@
 package com.example.datastructure.leetcode.editor.cn;
 
-import lombok.Data;
 
 public class ListNode {
     int val;
