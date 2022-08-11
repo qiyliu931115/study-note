@@ -23,6 +23,7 @@ public class MiGong {
         map[3][1] = 1;
         map[3][2] = 1;
 
+        System.out.println("地图的情况");
         for (int i = 0;i < 8; i++) {
             for (int j = 0;j < 7; j++) {
                 System.out.print(map[i][j] + " ");
@@ -30,7 +31,17 @@ public class MiGong {
             System.out.println();
         }
 
+        //使用递归回溯给小球找路
+        setWay(map,1,1);
 
+        //输出新的地图 小球走过 并标识过的递归
+        System.out.println("小球走过 并标识过的 地图的情况");
+        for (int i = 0;i < 8; i++) {
+            for (int j = 0;j < 7; j++) {
+                System.out.print(map[i][j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
@@ -54,6 +65,20 @@ public class MiGong {
             if (map[i][j] == 0) {//如果当前这个点没走过
                 //按策略 下-》右边-》上面-》左
                 map[i][j] = 2; //假定该点可以走通的
+                if (setWay(map, i+1,j)) { //向下走
+                    return true;
+                } else if (setWay(map, i,j +1)) {//向右走
+                    return true;
+                } else if (setWay(map, i -1 ,j)) {//向上走
+                    return true;
+                } else if (setWay(map, i ,j - 1)) {//向左走
+                    return true;
+                } else {
+                    map[i][j] = 3;//该点是走不通的 置为3
+                    return false;
+                }
+            } else { //如果map[i][j] != 0 可能是1,2,3
+                return false;
             }
         }
     }
