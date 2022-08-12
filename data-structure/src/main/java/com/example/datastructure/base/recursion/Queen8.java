@@ -7,10 +7,14 @@ public class Queen8 {
     //定义数组array 保存皇后放置位置的结果，比如 arr={0.4.7.5.2.6.1.3}
     int[] array = new int[max];
     static int count = 0;
+    static int judgeCount = 0;
+
     public static void main(String[] args) {
         Queen8 queen8 = new Queen8();
         queen8.check(0);
         System.out.printf("一共有%d解法", count);
+        System.out.println();
+        System.out.printf("一共判断冲突%d次", judgeCount);
     }
 
     //编写一个方法 放置第N个皇后
@@ -44,6 +48,7 @@ public class Queen8 {
      * @return
      */
     private boolean judge (int n) {
+        judgeCount++;
         for (int i = 0; i < n ;i++) {
             //同一列 斜线
             //  array[i] == array[n] 表示判断 第N个皇后是否和前面的N-1个皇后在同一列  行是横着的，列是竖着的
