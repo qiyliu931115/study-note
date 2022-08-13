@@ -1,13 +1,35 @@
 package com.example.datastructure.base.sort;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
+//选择排序还是要比冒泡要短的
 public class SelectSort {
 
 
     public static void main(String[] args) {
-        int[] arr = {101,34,119,1};
-        selectSort0(arr);
+//        int[] arr = {101,34,119,1};
+//        selectSort0(arr);
+
+
+        int[] arr2 = new int[80000];
+        for (int i = 0; i < 80000 ;i++) {
+            arr2[i] = (int)(Math.random() * 8000000); //生成【0-8000000】的数
+        }
+
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = simpleDateFormat.format(date);
+
+        System.out.println("排序前的时间是" + dateStr);
+
+        selectSort0(arr2);
+
+        Date date2 = new Date();
+        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr2 = simpleDateFormat2.format(date2);
+        System.out.println("排序后的时间是" + dateStr2);
     }
 
 
@@ -31,8 +53,8 @@ public class SelectSort {
                 arr[i] = min;
             }
 
-            System.out.println("第" + i + "轮后");
-            System.out.println(Arrays.toString(arr));
+            //System.out.println("第" + i + "轮后");
+            //System.out.println(Arrays.toString(arr));
         }
     }
 
