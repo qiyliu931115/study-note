@@ -24,6 +24,9 @@ public class InsertSort {
             // 1    insertIndex >=0 保证给 insertIndex找插入位置 不越界
             // 2    insertValue < arr[insertIndex] 待插入的数据 还没有找到插入位置
             // 3    就需要将arr[insertIndex]往后移动
+
+            //如果要从大到小排序
+            //insertValue > arr[insertIndex]
             while (insertIndex >=0 && insertValue < arr[insertIndex]) {
                 arr[insertIndex + 1] = arr[insertIndex];
                 insertIndex--;
