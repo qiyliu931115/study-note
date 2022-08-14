@@ -29,8 +29,11 @@ public class InsertSort {
                 insertIndex--;
             }
             //当退出while循环时 说明插入位置找到 insertIndex+1
+            //是否需要赋值
+            if (insertIndex + 1 != i) {
+                arr[insertIndex + 1] = insertValue;
+            }
 
-            arr[insertIndex + 1] = insertValue;
         }
 
 
