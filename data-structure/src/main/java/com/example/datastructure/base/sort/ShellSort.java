@@ -13,8 +13,9 @@ public class ShellSort {
 
     }
 
+    //交换算法
     public static void shellSort0(int[] arr) {
-
+        int count = 0;
         for (int gap = arr.length/2; gap > 0 ; gap = gap / 2) {
             for (int i = gap; i< arr.length; i++) {
                 for (int j = i  - gap; j>= 0; j = j - gap) {
@@ -26,6 +27,7 @@ public class ShellSort {
                     }
                 }
             }
+            System.out.println("第" + (++count) + "轮排序" + Arrays.toString(arr));
         }
 
 
