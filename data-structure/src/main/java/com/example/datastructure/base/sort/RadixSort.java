@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class RadixSort {
 
     public static void main(String[] args) {
-        int[] arr = {53,3,542,748,14,214};
+        int[] arr = {53,-3,542,-748,14,214};
 
         radixSort1(arr);
 
@@ -16,14 +16,31 @@ public class RadixSort {
 
     }
 
+    /**
+     * 有负数时处理思路：先判断有无负数 有则找到最小值 数组所有数据都减去该值 也就是数组最小值会变为0 接下来按正整数排序 最后数组所有数据加上原最小数 变为原有数据值
+     * @param arr
+     */
+
     public static void radixSort1(int[] arr) {
         //得到数组中最大的数的位数
         int max = arr[0];
+
+        int min  = 0;
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
                 max  = arr[i];
             }
+
+            if (arr[i] < min) {
+                min  = arr[i];
+            }
         }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]  = arr[i] - min;
+        }
+
+
         int maxLength = (max + "").length();
 
 
@@ -70,6 +87,10 @@ public class RadixSort {
             }
         }
 
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]  = arr[i] + min;
+        }
     }
 
     public static void radixSort(int[] arr) {
