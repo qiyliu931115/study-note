@@ -6,7 +6,26 @@ public class BinarySearch {
         int[] arr = {1,8,10,89,1000,1234};
 
 
-        System.out.println(binarySearch(arr, 10));
+        System.out.println(binarySearch(arr, 231311));
+
+
+        System.out.println(binarySearch0(arr, 0, arr.length-1, 231311));
+    }
+
+    public static int binarySearch0(int[] arr, int left, int right, int value) {
+        if (left > right) {
+            return -1;
+        }
+        int mid = left + (right - left) / 2;
+        int midValue = arr[mid];
+        if (midValue == value) {
+            return mid;
+        } else if (midValue > value) {
+            return binarySearch0(arr, left, mid - 1, value);
+        } else {
+            return binarySearch0(arr, mid + 1, right, value);
+        }
+
     }
 
 
