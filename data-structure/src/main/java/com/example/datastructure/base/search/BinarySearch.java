@@ -1,15 +1,61 @@
 package src.main.java.com.example.datastructure.base.search;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {1,8,10,89,1000,1234};
+        int[] arr = {1,8,10,89,1000,1000};
 
 
-        System.out.println(binarySearch(arr, 231311));
+        System.out.println(binarySearch(arr, 1000));
 
 
-        System.out.println(binarySearch0(arr, 0, arr.length-1, 231311));
+        System.out.println(binarySearch0(arr, 0, arr.length-1, 1000));
+
+        System.out.println(binarySearch1(arr, 0, arr.length-1, 1000));
+    }
+
+    public static ArrayList binarySearch1(int[] arr, int left, int right, int value) {
+        if (left > right) {
+            return null;
+        }
+        int mid = left + (right - left) / 2;
+        int midValue = arr[mid];
+        if (midValue == value) {
+            //向左和向右扫描， 所有等于value的下标 放入arrayList
+            ArrayList<Integer> integers = new ArrayList<>();
+            int temp = mid -1;
+            while (true) {
+                if (temp < 0 || arr[temp] != value) {
+                    break;
+                }
+                //temp放入集合
+                integers.add(temp);
+                temp -= 1;
+            }
+
+            integers.add(mid);
+
+
+            temp = mid  + 1;
+            while (true) {
+                if (temp > arr.length -1 || arr[temp] != value) {
+                    break;
+                }
+                //temp放入集合
+                integers.add(temp);
+                temp += 1;
+            }
+
+            return integers;
+        } else if (midValue > value) {
+            return binarySearch1(arr, left, mid - 1, value);
+        } else {
+            return binarySearch1(arr, mid + 1, right, value);
+        }
+
     }
 
     public static int binarySearch0(int[] arr, int left, int right, int value) {
