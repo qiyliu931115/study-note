@@ -11,7 +11,8 @@ public class HashTableDemo {
         while (true) {
             System.out.println("add:添加雇员");
             System.out.println("list:显示雇员");
-            System.out.println("find:查早雇员");
+            System.out.println("find:查找雇员");
+            System.out.println("del:删除雇员");
             System.out.println("exit:退出系统");
 
             key = scanner.next();
