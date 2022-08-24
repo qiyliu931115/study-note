@@ -35,6 +35,11 @@ public class HashTableDemo {
                     id = scanner.nextInt();
                     hashTable.getEmpById(id);
                     break;
+                case "del":
+                    System.out.println("输入要删除的ID");
+                    id = scanner.nextInt();
+                    hashTable.del(id);
+                    break;
                 default:
                     break;
             }
@@ -101,8 +106,14 @@ class HashTable {
             System.out.println("没有找到该雇员");
             return null;
         }
-        System.out.println("在第" + (hash+1) + "条链表中找到该雇员");
+        System.out.println("在第" + (hash+1) + "条链表中找到该雇员,id=" + empById.id + ",name=" + empById.name);
         return empById;
+    }
+
+    public void del(int id) {
+
+        int hash = hash(id);
+        empLinkedLists[hash].del(id);
     }
 }
 
@@ -118,9 +129,16 @@ class EmpLinkedList {
         }
 
         Emp temp = this.head;
-
+        if (temp.id == emp.id) {
+            temp.name = emp.name;
+            return;
+        }
         while (temp.next != null) {
             temp = temp.next;
+            if (temp.id == emp.id) {
+                temp.name = emp.name;
+                return;
+            }
         }
 
         temp.next = emp;
@@ -143,6 +161,32 @@ class EmpLinkedList {
         System.out.println();
 
     }
+
+    public void del(int id) {
+
+        if (head == null) {
+            System.out.println("链表为空");
+            return;
+        }
+
+        if (head.id == id) {
+            head = head.next;
+            return;
+        }
+
+        Emp temp = head;
+
+        while (temp.next != null) {
+            if (temp.next.id == id) {
+                temp.next = temp.next.next;
+                return;
+            }
+            temp = temp.next;
+        }
+
+        System.out.println("未找到数据");
+    }
+
 
     public Emp getEmpById(int id) {
         if (head == null) {
