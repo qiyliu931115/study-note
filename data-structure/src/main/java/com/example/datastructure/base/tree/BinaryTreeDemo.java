@@ -12,15 +12,30 @@ public class BinaryTreeDemo {
         hearNode.setLeft(hearNode2);
         hearNode.setRight(hearNode3);
         hearNode3.setRight(hearNode4);
+
+        binaryTree.setRoot(hearNode);
+
         //测试
         System.out.println("前序遍历"); //1,2,3,4
-        binaryTree.setRoot(hearNode);
         binaryTree.prevOrder();
 
         System.out.println("中序遍历"); //2,1,3,4
         binaryTree.midOrder();
 
         System.out.println("后序遍历"); //2,4,3,1
+        binaryTree.rearOrder();
+
+
+        HearNode hearNode5 = new HearNode(5, "关胜");
+        hearNode3.setLeft(hearNode5);
+
+        System.out.println("前序遍历"); //1,2,3,5,4
+        binaryTree.prevOrder();
+
+        System.out.println("中序遍历"); //2,1,5,3,4
+        binaryTree.midOrder();
+
+        System.out.println("后序遍历"); //2,5,4,3,1
         binaryTree.rearOrder();
     }
 
@@ -132,12 +147,12 @@ class HearNode {
     public void midOrder() {
         //递归左子树
         if (this.left != null) {
-            this.left.prevOrder();
+            this.left.midOrder();
         }
         System.out.println(this);//输出父节点
         //递归右子树
         if (this.right != null) {
-            this.right.prevOrder();
+            this.right.midOrder();
         }
     }
 
