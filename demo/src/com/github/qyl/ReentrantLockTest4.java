@@ -11,6 +11,7 @@ public class ReentrantLockTest4 {
 
         new Thread(()->{
            lock.lock();
+            lock.lock();
            try {
                System.out.println("=====外层");
                lock.lock();
@@ -22,7 +23,16 @@ public class ReentrantLockTest4 {
            } finally {
                lock.unlock();
            }
-        }).start();
+        },"t1").start();
+
+        new Thread(()->{
+            lock.lock();
+            try {
+                System.out.println(Thread.currentThread().getName() + "调用开始");
+            } finally {
+                lock.unlock();
+            }
+        },"t2").start();
 
     }
 
