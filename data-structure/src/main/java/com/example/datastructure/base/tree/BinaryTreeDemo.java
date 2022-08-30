@@ -4,16 +4,16 @@ public class BinaryTreeDemo {
 
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
-        HearNode hearNode = new HearNode(1, "宋江");
-        HearNode hearNode2 = new HearNode(2, "吴用");
-        HearNode hearNode3 = new HearNode(3, "卢俊义");
-        HearNode hearNode4 = new HearNode(4, "林冲");
+        HeroNode HeroNode = new HeroNode(1, "宋江");
+        HeroNode HeroNode2 = new HeroNode(2, "吴用");
+        HeroNode HeroNode3 = new HeroNode(3, "卢俊义");
+        HeroNode HeroNode4 = new HeroNode(4, "林冲");
         //先手动创建二叉树，后面学习递归方式创建二叉树
-        hearNode.setLeft(hearNode2);
-        hearNode.setRight(hearNode3);
-        hearNode3.setRight(hearNode4);
+        HeroNode.setLeft(HeroNode2);
+        HeroNode.setRight(HeroNode3);
+        HeroNode3.setRight(HeroNode4);
 
-        binaryTree.setRoot(hearNode);
+        binaryTree.setRoot(HeroNode);
 
         //测试
         System.out.println("前序遍历"); //1,2,3,4
@@ -26,8 +26,8 @@ public class BinaryTreeDemo {
         binaryTree.rearOrder();
 
 
-        HearNode hearNode5 = new HearNode(5, "关胜");
-        hearNode3.setLeft(hearNode5);
+        HeroNode HeroNode5 = new HeroNode(5, "关胜");
+        HeroNode3.setLeft(HeroNode5);
 
         System.out.println("前序遍历"); //1,2,3,5,4
         binaryTree.prevOrder();
@@ -37,6 +37,8 @@ public class BinaryTreeDemo {
 
         System.out.println("后序遍历"); //2,5,4,3,1
         binaryTree.rearOrder();
+
+
     }
 
 }
@@ -44,9 +46,9 @@ public class BinaryTreeDemo {
 //定义二叉数
 class BinaryTree {
 
-    private HearNode root;
+    private HeroNode root;
 
-    public void setRoot(HearNode root) {
+    public void setRoot(HeroNode root) {
         this.root = root;
     }
 
@@ -78,14 +80,14 @@ class BinaryTree {
     }
 }
 
-class HearNode {
+class HeroNode {
 
     private int no;
     private String name;
-    private HearNode left;//默认null
-    private HearNode right;//默认null
+    private HeroNode left;//默认null
+    private HeroNode right;//默认null
 
-    public HearNode(int no,String name) {
+    public HeroNode(int no,String name) {
         this.no = no;
         this.name = name;
     }
@@ -106,25 +108,25 @@ class HearNode {
         this.name = name;
     }
 
-    public HearNode getLeft() {
+    public HeroNode getLeft() {
         return left;
     }
 
-    public void setLeft(HearNode left) {
+    public void setLeft(HeroNode left) {
         this.left = left;
     }
 
-    public HearNode getRight() {
+    public HeroNode getRight() {
         return right;
     }
 
-    public void setRight(HearNode right) {
+    public void setRight(HeroNode right) {
         this.right = right;
     }
 
     @Override
     public String toString() {
-        return "HearNode{" +
+        return "HeroNode{" +
                 "no=" + no +
                 ", name='" + name + '\'' +
                 '}';
@@ -168,5 +170,35 @@ class HearNode {
             this.right.rearOrder();
         }
         System.out.println(this);//输出父节点
+    }
+
+    //前序查找
+    public HeroNode prevSearch(int no) {
+        if (this.no == no) {
+            return this;
+        }
+        HeroNode heroNode = null;
+        if (this.left!= null) {
+            heroNode =  this.left.prevSearch(no);
+        }
+        if (this.right!= null) {
+            heroNode =   this.right.prevSearch(no);
+        }
+        return heroNode;
+    }
+
+    //中序序查找
+    public HeroNode midSearch(int no) {
+        HeroNode heroNode = null;
+        if (this.left!= null) {
+            heroNode = this.left.midSearch(no);
+        }
+        if (this.no == no) {
+            return this;
+        }
+        if (this.right!= null) {
+            heroNode = this.right.midSearch(no);
+        }
+        return heroNode;
     }
 }
