@@ -1,5 +1,7 @@
 package com.github.qyl;
 
+import java.util.concurrent.TimeUnit;
+
 public class LockSupportDemo {
 
     static Object object = new Object();
@@ -24,12 +26,6 @@ public class LockSupportDemo {
             synchronized (object){
                 object.notify();
                 System.out.println(Thread.currentThread().getName() + "---通知");
-
-                try {
-                    object.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
 
         },"B").start();
