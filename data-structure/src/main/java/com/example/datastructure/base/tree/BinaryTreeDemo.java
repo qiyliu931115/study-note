@@ -38,7 +38,32 @@ public class BinaryTreeDemo {
         System.out.println("后序遍历"); //2,5,4,3,1
         binaryTree.rearOrder();
 
+        System.out.println("前序遍历查找"); //次数4
+        HeroNode prevSearch = binaryTree.prevSearch(5);
+        if (prevSearch!=null) {
+            System.out.printf("找到了,信息为 no=%d, name=%s", prevSearch.getNo(), prevSearch.getName());
+            System.out.println();
+        } else {
+            System.out.println("没有找到,信息为 no=" + 5 + "的英雄");
+        }
 
+        System.out.println("中序遍历查找"); //次数3
+        HeroNode midSearch = binaryTree.midSearch(5);
+        if (midSearch!=null) {
+            System.out.printf("找到了,信息为 no=%d, name=%s", midSearch.getNo(), midSearch.getName());
+            System.out.println();
+        } else {
+            System.out.println("没有找到,信息为 no=" + 5 + "的英雄");
+        }
+
+        System.out.println("后序遍历查找"); //次数2
+        HeroNode postSearch = binaryTree.postSearch(5);
+        if (postSearch!=null) {
+            System.out.printf("找到了,信息为 no=%d, name=%s", postSearch.getNo(), postSearch.getName());
+            System.out.println();
+        } else {
+            System.out.println("没有找到,信息为 no=" + 5 + "的英雄");
+        }
     }
 
 }
@@ -204,6 +229,7 @@ class HeroNode {
 
     //前序查找
     public HeroNode prevSearch(int no) {
+        System.out.println("进入前序查找");
         if (this.no == no) {
             return this;
         }
@@ -211,6 +237,10 @@ class HeroNode {
         if (this.left!= null) {
             heroNode =  this.left.prevSearch(no);
         }
+        if (heroNode != null) {
+            return heroNode;
+        }
+
         if (this.right!= null) {
             heroNode =   this.right.prevSearch(no);
         }
@@ -219,6 +249,7 @@ class HeroNode {
 
     //中序查找
     public HeroNode midSearch(int no) {
+
         HeroNode heroNode = null;
         if (this.left!= null) {
             heroNode = this.left.midSearch(no);
@@ -226,7 +257,7 @@ class HeroNode {
         if (heroNode!= null) {
             return heroNode;
         }
-
+        System.out.println("进入中序查找");
         if (this.no == no) {
             return this;
         }
@@ -238,6 +269,7 @@ class HeroNode {
 
     //后序查找
     public HeroNode postSearch(int no) {
+
         HeroNode heroNode = null;
         if (this.left!= null) {
             heroNode = this.left.postSearch(no);
@@ -252,7 +284,7 @@ class HeroNode {
         if (heroNode!= null) {
             return heroNode;
         }
-
+        System.out.println("进入后序查找");
         if (this.no == no) {
             return this;
         }
