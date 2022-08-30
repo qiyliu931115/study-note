@@ -78,6 +78,36 @@ class BinaryTree {
             System.out.println("二叉树为空 无法遍历");
         }
     }
+
+    //前序查找
+    public HeroNode prevSearch(int no) {
+        if (this.root != null) {
+            return this.root.prevSearch(no);
+        } else {
+            System.out.println("二叉树为空 无法查找");
+            return null;
+        }
+    }
+
+    //中序查找
+    public HeroNode midSearch(int no) {
+        if (this.root != null) {
+            return this.root.midSearch(no);
+        } else {
+            System.out.println("二叉树为空 无法查找");
+            return null;
+        }
+    }
+
+    //后序查找
+    public HeroNode postSearch(int no) {
+        if (this.root != null) {
+            return this.root.postSearch(no);
+        } else {
+            System.out.println("二叉树为空 无法查找");
+            return null;
+        }
+    }
 }
 
 class HeroNode {
@@ -187,17 +217,44 @@ class HeroNode {
         return heroNode;
     }
 
-    //中序序查找
+    //中序查找
     public HeroNode midSearch(int no) {
         HeroNode heroNode = null;
         if (this.left!= null) {
             heroNode = this.left.midSearch(no);
         }
+        if (heroNode!= null) {
+            return heroNode;
+        }
+
         if (this.no == no) {
             return this;
         }
         if (this.right!= null) {
             heroNode = this.right.midSearch(no);
+        }
+        return heroNode;
+    }
+
+    //后序查找
+    public HeroNode postSearch(int no) {
+        HeroNode heroNode = null;
+        if (this.left!= null) {
+            heroNode = this.left.postSearch(no);
+        }
+        if (heroNode!= null) {
+            return heroNode;
+        }
+
+        if (this.right!= null) {
+            heroNode = this.right.postSearch(no);
+        }
+        if (heroNode!= null) {
+            return heroNode;
+        }
+
+        if (this.no == no) {
+            return this;
         }
         return heroNode;
     }
