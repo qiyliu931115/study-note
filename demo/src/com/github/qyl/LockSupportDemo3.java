@@ -15,6 +15,14 @@ public class LockSupportDemo3 {
     public static void main(String[] args) {
         Thread threadA = new Thread(() -> {
             try {
+
+
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 System.out.println(Thread.currentThread().getName() + "---come in");
                 LockSupport.park();
                 System.out.println(Thread.currentThread().getName() + "---被唤醒");
@@ -25,11 +33,7 @@ public class LockSupportDemo3 {
 
         threadA.start();
 
-        try {
-            TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
 
         new Thread(() -> {
