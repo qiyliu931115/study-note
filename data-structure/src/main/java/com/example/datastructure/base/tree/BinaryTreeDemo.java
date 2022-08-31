@@ -64,6 +64,14 @@ public class BinaryTreeDemo {
         } else {
             System.out.println("没有找到,信息为 no=" + 5 + "的英雄");
         }
+
+        System.out.println("删除前,前序遍历");
+        binaryTree.prevOrder();
+        //binaryTree.deleteNode(5);
+        binaryTree.deleteNode(3);
+        System.out.println("删除后,前序遍历");
+        binaryTree.prevOrder();
+
     }
 
 }
@@ -75,6 +83,19 @@ class BinaryTree {
 
     public void setRoot(HeroNode root) {
         this.root = root;
+    }
+
+    public void deleteNode(int no) {
+        if (root == null) {
+            System.out.println("空数，不能删除");
+            return;
+        }
+        if (root.getNo() == no) {
+            root = null;
+            return;
+        }
+        //递归删除
+        root.deleteNode(no);
     }
 
     //前序遍历
@@ -187,8 +208,26 @@ class HeroNode {
                 '}';
     }
 
-    //前序遍历
+    //递归删除节点
+    public void deleteNode(int no) {
+        if (this.left!= null && this.left.no == no) {
+            this.left = null;
+            return;
+        }
+        if (this.right!= null && this.right.no == no) {
+            this.right = null;
+            return;
+        }
 
+        if (this.left!=null) {
+            this.left.deleteNode(no);
+        }
+        if (this.right!=null) {
+            this.right.deleteNode(no);
+        }
+    }
+
+    //前序遍历
     public void prevOrder() {
         System.out.println(this);//先输出父节点
         //递归左子树
