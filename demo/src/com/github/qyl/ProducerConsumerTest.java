@@ -4,6 +4,9 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 设置一个变量初始值为0，四个线程交替操作 一个加一 一个减一 来5轮
+ */
 public class ProducerConsumerTest {
 
     public static void main(String[] args) {
