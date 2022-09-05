@@ -56,7 +56,6 @@ class Share{
             System.out.println(Thread.currentThread().getName() + ":" + count);
             condition.signalAll();
 
-            lock.lockInterruptibly();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }finally {
