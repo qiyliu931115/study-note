@@ -11,7 +11,11 @@ public class BlockingQueueDemo {
         System.out.println(blockingQueue.offer("a"));
         System.out.println(blockingQueue.offer("b"));
         System.out.println(blockingQueue.offer("c"));
-        System.out.println(blockingQueue.offer("c"));
+
+        System.out.println(blockingQueue.poll());
+        System.out.println(blockingQueue.poll());
+        System.out.println(blockingQueue.poll());
+        System.out.println(blockingQueue.poll());
 
     }
 
