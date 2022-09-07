@@ -5,6 +5,8 @@ import java.util.concurrent.*;
 public class CustomThreadPoolDemo {
     public static void main(String[] args) {
 
+        Runtime.getRuntime().availableProcessors();
+
         ExecutorService executorService = new ThreadPoolExecutor(
                 2, 5,1,TimeUnit.SECONDS,
                 new LinkedBlockingDeque<>(3),Executors.defaultThreadFactory(), new ThreadPoolExecutor.DiscardOldestPolicy());
