@@ -39,4 +39,10 @@ public class DeadLockDemo {
         new Thread(new HoldLockThread(lockA,lockB),"AAA").start();
         new Thread(new HoldLockThread(lockB,lockA),"BBB").start();
     }
+
+    /**
+     * Linux ps -ef|grep
+     *
+     * windows下的
+     */
 }
