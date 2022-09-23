@@ -1,30 +1,23 @@
-为什么要自定义类加载器？
----
+package com.github.qyl.classload;
 
-    隔离加载类
+import java.io.*;
 
-    修改类的加载方式
+public class MyClassLoader extends ClassLoader{
 
-    扩展加载源
+    private String byteCodePath;
 
-    防止源码泄漏
+    public MyClassLoader(String name, ClassLoader parent, String byteCodePath) {
+        this.byteCodePath = byteCodePath;
+    }
 
-![img_129.png](img_129.png)
+    public MyClassLoader(ClassLoader parent, String byteCodePath) {
+        super(parent);
+        this.byteCodePath = byteCodePath;
+    }
 
-如何实现自定义类加载器
----
-
-    1 重写loadClass()
-
-    2 重写findClass()
-
-    loadClass()实现了双亲委派机制的逻辑 擅自修改会导致模型被破坏 容易出问题
-
-
-![img_130.png](img_130.png)
-
-![img_131.png](img_131.png)
-
+    public MyClassLoader(String byteCodePath) {
+        this.byteCodePath = byteCodePath;
+    }
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
@@ -66,3 +59,4 @@
         }
         return super.findClass(name);
     }
+}
