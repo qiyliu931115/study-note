@@ -1,6 +1,7 @@
 package com.example.springdemo.statemachine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.Message;
 import org.springframework.statemachine.annotation.OnTransition;
 import org.springframework.statemachine.annotation.WithStateMachine;
@@ -13,7 +14,8 @@ import org.springframework.stereotype.Component;
 @WithStateMachine(name = "orderStateMachine")
 public class OrderStateListener {
 
-
+    @Autowired
+    private RedisTemplate<String, String> stringStringRedisTemplate;
 
     @OnTransition(source = "ORDER_WAIT_PAY", target = "ORDER_WAIT_SEND")
     public boolean payToSend (Message<OrderStateChangeAction> message) {

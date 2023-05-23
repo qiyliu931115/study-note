@@ -48,7 +48,8 @@ public class OrderStateMachineConfig extends StateMachineConfigurerAdapter<Order
                 ;
     }
 
-    @Bean("stateMachineRedisPersister")
+    @Bean
+    //@Bean("stateMachineRedisPersister")
     public RedisStateMachinePersister<OrderState, OrderStateChangeAction> getRedisPersister() {
         //状态机redis持久化
         RedisStateMachineContextRepository<OrderState, OrderStateChangeAction> repository
