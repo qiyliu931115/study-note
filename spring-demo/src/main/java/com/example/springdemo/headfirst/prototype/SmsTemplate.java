@@ -7,9 +7,6 @@ public class SmsTemplate {
      */
     private String templateId;
 
-    /**
-     * 短信模版内容
-     */
     private String templateContent;
 
     public SmsTemplate(String templateId, String templateContent) {

@@ -58,10 +58,6 @@ public class SmsRequest implements Cloneable{
         this.templateContent = templateContent;
     }
 
-    /**
-     * 替换短信模版到占位符
-     * @param variables
-     */
     public void replaceVariables (Map<String, String> variables) {
         String content = this.templateContent;
         for (Map.Entry<String, String> entry : variables.entrySet()) {
