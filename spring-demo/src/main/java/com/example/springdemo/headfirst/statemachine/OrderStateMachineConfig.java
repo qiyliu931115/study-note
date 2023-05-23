@@ -21,7 +21,6 @@ public class OrderStateMachineConfig extends StateMachineConfigurerAdapter<Order
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
 
-
     @Override
     public void configure(StateMachineStateConfigurer<OrderState, OrderStateChangeAction> states) throws Exception {
         //初始化状态 待支付
