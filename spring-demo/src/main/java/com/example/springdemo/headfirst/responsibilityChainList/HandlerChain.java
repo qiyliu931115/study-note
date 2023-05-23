@@ -1,8 +1,11 @@
-package com.example.springdemo.headfirst.handler1;
+package com.example.springdemo.headfirst.responsibilityChainList;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 数组责任链
+ */
 public class HandlerChain {
 
     private List<IHandler> handlers = new ArrayList<>();

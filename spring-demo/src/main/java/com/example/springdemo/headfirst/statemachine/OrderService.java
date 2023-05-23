@@ -1,16 +1,11 @@
-package com.example.springdemo.statemachine;
+package com.example.springdemo.headfirst.statemachine;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.BoundHashOperations;
-import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.redis.RedisStateMachinePersister;
-
-import javax.annotation.PostConstruct;
 
 public class OrderService {
 

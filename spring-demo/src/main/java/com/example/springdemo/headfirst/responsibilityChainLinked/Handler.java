@@ -1,5 +1,8 @@
-package com.example.springdemo.headfirst.handler2;
+package com.example.springdemo.headfirst.responsibilityChainLinked;
 
+/**
+ * 链式
+ */
 public abstract class Handler {
 
     Handler successor = null;

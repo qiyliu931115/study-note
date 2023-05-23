@@ -1,4 +1,4 @@
-package com.example.springdemo.headfirst.handler1;
+package com.example.springdemo.headfirst.responsibilityChainList;
 
 public class HandlerA implements IHandler {
     @Override

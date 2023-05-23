@@ -1,14 +1,13 @@
-package com.example.springdemo.statemachine;
+package com.example.springdemo.headfirst.statemachine;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.statemachine.config.EnableStateMachine;
-import org.springframework.statemachine.config.StateMachineConfig;
 import org.springframework.statemachine.config.StateMachineConfigurerAdapter;
-import org.springframework.statemachine.config.builders.*;
-import org.springframework.statemachine.config.common.annotation.AnnotationBuilder;
+import org.springframework.statemachine.config.builders.StateMachineStateConfigurer;
+import org.springframework.statemachine.config.builders.StateMachineTransitionConfigurer;
 import org.springframework.statemachine.persist.RepositoryStateMachinePersist;
 import org.springframework.statemachine.redis.RedisStateMachineContextRepository;
 import org.springframework.statemachine.redis.RedisStateMachinePersister;

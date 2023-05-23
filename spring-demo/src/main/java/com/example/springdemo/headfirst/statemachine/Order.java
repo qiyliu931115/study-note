@@ -1,7 +1,5 @@
-package com.example.springdemo.statemachine;
+package com.example.springdemo.headfirst.statemachine;
 
-
-import lombok.Data;
 
 public class Order {
 

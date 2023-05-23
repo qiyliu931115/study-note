@@ -1,4 +1,4 @@
-package com.example.springdemo.statemachine;
+package com.example.springdemo.headfirst.statemachine;
 
 public enum OrderStateChangeAction {
 

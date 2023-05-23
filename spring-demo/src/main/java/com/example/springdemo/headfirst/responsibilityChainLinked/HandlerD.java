@@ -1,4 +1,4 @@
-package com.example.springdemo.headfirst.handler2;
+package com.example.springdemo.headfirst.responsibilityChainLinked;
 
 public class HandlerD extends  Handler{
     @Override

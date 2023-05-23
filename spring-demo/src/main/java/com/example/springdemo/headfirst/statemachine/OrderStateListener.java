@@ -1,4 +1,4 @@
-package com.example.springdemo.statemachine;
+package com.example.springdemo.headfirst.statemachine;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
