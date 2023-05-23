@@ -8,7 +8,7 @@ import org.springframework.statemachine.annotation.WithStateMachine;
 import org.springframework.stereotype.Component;
 
 /**
- * 状态转化时进行监听
+ * 状态转化时进行监听 观察者模式
  */
 @Component
 @WithStateMachine(name = "orderStateMachine")
