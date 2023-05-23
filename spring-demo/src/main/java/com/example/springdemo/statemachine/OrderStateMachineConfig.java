@@ -9,6 +9,8 @@ import org.springframework.statemachine.config.StateMachineConfig;
 import org.springframework.statemachine.config.StateMachineConfigurerAdapter;
 import org.springframework.statemachine.config.builders.*;
 import org.springframework.statemachine.config.common.annotation.AnnotationBuilder;
+import org.springframework.statemachine.persist.RepositoryStateMachinePersist;
+import org.springframework.statemachine.redis.RedisStateMachineContextRepository;
 import org.springframework.statemachine.redis.RedisStateMachinePersister;
 
 import java.util.EnumSet;
@@ -48,7 +50,12 @@ public class OrderStateMachineConfig extends StateMachineConfigurerAdapter<Order
 
     @Bean("stateMachineRedisPersister")
     public RedisStateMachinePersister<OrderState, OrderStateChangeAction> getRedisPersister() {
-        return null;
+        //状态机redis持久化
+        RedisStateMachineContextRepository<OrderState, OrderStateChangeAction> repository
+                = new RedisStateMachineContextRepository<>(redisConnectionFactory);
+        RepositoryStateMachinePersist<OrderState, OrderStateChangeAction> persist
+                = new RepositoryStateMachinePersist<>(repository);
+        return new RedisStateMachinePersister<>(persist);
     }
 
 
