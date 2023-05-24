@@ -1,4 +1,4 @@
-package com.example.springdemo.headfirst.responsibilityChainLinked;
+package com.example.springdemo.headfirst.responsibilityChain.linked;
 
 public class HandlerA extends  Handler{
     @Override

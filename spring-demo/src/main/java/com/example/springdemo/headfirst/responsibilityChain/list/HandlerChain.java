@@ -1,4 +1,4 @@
-package com.example.springdemo.headfirst.responsibilityChainList;
+package com.example.springdemo.headfirst.responsibilityChain.list;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,7 @@
 package com.example.springdemo.headfirst.singleton;
 
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
 /**
  * 双重检查锁单例模式中，使用volatile关键字来修饰单例对象的变量，是为了保证多线程环境下的可见性和有序性。
  *
@@ -17,14 +19,14 @@ package com.example.springdemo.headfirst.singleton;
  */
 public class DoubleCheckSingleton {
 
-    private static volatile DoubleCheckSingleton doubleCheckSingleton = null;
+    private static volatile ThreadPoolTaskExecutor threadPoolTaskExecutor = null;
 
     public DoubleCheckSingleton () {
         System.out.println(Thread.currentThread().getName() + ":DoubleCheckSingleton");
     }
 
-    public static DoubleCheckSingleton getInstance() {
-        if (doubleCheckSingleton == null) {
+    public static ThreadPoolTaskExecutor getInstance() {
+        if (threadPoolTaskExecutor == null) {
 //            双重检查锁单例模式中，使用锁来保证线程安全，锁的对象是Singleton.class，而不是this对象，是因为this对象在多线程环境下是不安全的。
 //
 //            在单例模式中，单例对象是在类加载的时候就被创建出来的，因此锁的对象应该是类对象，而不是实例对象。
@@ -37,15 +39,26 @@ public class DoubleCheckSingleton {
 //
 //            而使用this对象作为锁对象，需要在实例化之后才能使用，无法保证在实例化之前不会出现多个实例的情况。
             synchronized (DoubleCheckSingleton.class) {
-                if (doubleCheckSingleton == null) {
-                    doubleCheckSingleton = new DoubleCheckSingleton();
+                if (threadPoolTaskExecutor == null) {
+                    ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+                    threadPoolTaskExecutor.setCorePoolSize(5);
+                    threadPoolTaskExecutor.setMaxPoolSize(5);
+                    threadPoolTaskExecutor.setThreadNamePrefix("AsyncEventExecutor-");
+                    threadPoolTaskExecutor.initialize();
+                    return threadPoolTaskExecutor;
                 }
             }
         }
-        return doubleCheckSingleton;
+        return threadPoolTaskExecutor;
     }
 
     public static void main(String[] args) {
-        getInstance();
+        ThreadPoolTaskExecutor instance = getInstance();
+        instance.execute(new Runnable() {
+            @Override
+            public void run() {
+                // 执行任务
+            }
+        });
     }
 }

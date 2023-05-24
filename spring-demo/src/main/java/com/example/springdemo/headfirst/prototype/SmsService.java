@@ -37,8 +37,7 @@ public class SmsService {
      */
     public static void sendSms (Map<String, Map<String, String>> variablesMap, SmsTemplate template) throws CloneNotSupportedException {
         String templateContent = template.getTemplateContent();
-        SmsRequest prototype = new SmsRequest(null, null, templateContent);//创建原型对象
-
+        SmsRequest prototype = new SmsRequest(null, templateContent);//创建原型对象
 
         for (Map.Entry<String, Map<String, String >> entry : variablesMap.entrySet()) {
             String phoneNumber = entry.getKey();
