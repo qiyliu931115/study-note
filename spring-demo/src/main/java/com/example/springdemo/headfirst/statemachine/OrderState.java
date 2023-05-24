@@ -1,5 +1,8 @@
 package com.example.springdemo.headfirst.statemachine;
 
+/**
+ * 订单状态枚举
+ */
 public enum OrderState {
     /**
      * 待支付

@@ -8,11 +8,10 @@ import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.config.StateMachineBuilder;
 import org.springframework.statemachine.config.StateMachineFactory;
 import org.springframework.statemachine.redis.RedisStateMachinePersister;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OrderService {
-
-//    @Autowired
-//    private StateMachine<OrderState, OrderStateChangeAction> stateMachine;
 
     public static final String stateMachineId = "orderStateMachine";
 
@@ -27,14 +26,11 @@ public class OrderService {
 
     /**
      * 支付回调
-     * @param orderId
-     * @return
+     * @param orderId 订单id
+     * @return Order
      */
     public Order pay (String orderId) {
-        //从Redis获取订单信息
-        Order order = null;
-        //order = (Order) stringStringRedisTemplate.opsForValue().get(orderId);
-
+        Order order = getOrder();
         //包装订单状态变更message 附带订单操作pay_order
         Message<OrderStateChangeAction> message = MessageBuilder.withPayload(OrderStateChangeAction.PAY_ORDER)
                 .setHeader("order", order).build();
@@ -81,9 +77,15 @@ public class OrderService {
             e.printStackTrace();
         } finally {
             if (stateMachine != null) {
+                //停止状态机
                 stateMachine.stop();
             }
         }
         return false;
+    }
+
+    private Order getOrder() {
+        //TODO 从Redis获取订单信息
+        return null;
     }
 }

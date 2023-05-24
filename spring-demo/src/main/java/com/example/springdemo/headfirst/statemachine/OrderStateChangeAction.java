@@ -1,5 +1,8 @@
 package com.example.springdemo.headfirst.statemachine;
 
+/**
+ * 订单事件枚举
+ */
 public enum OrderStateChangeAction {
 
     /**

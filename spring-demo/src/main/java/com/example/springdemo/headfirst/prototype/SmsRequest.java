@@ -3,7 +3,7 @@ package com.example.springdemo.headfirst.prototype;
 import java.util.Map;
 
 /**
- * 请求对象 注意 必须 实现Cloneable 重写clone方法
+ * 请求第三方平台对象 注意 必须 实现Cloneable 重写clone方法
  */
 public class SmsRequest implements Cloneable{
 
@@ -12,15 +12,15 @@ public class SmsRequest implements Cloneable{
      */
     private Long userPhone;
 
-//    /**
-//     * 短信内容
-//     */
-//    private String content;
-
     /**
      * 短信模版
      */
     private String templateContent;
+
+    /**
+     * 短信类型 1-营销短信 2-通知短信
+     */
+    private Integer type;
 
 
     public Long getUserPhone() {
@@ -31,9 +31,13 @@ public class SmsRequest implements Cloneable{
         this.userPhone = userPhone;
     }
 
-//    public String getContent() {
-//        return content;
-//    }
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
     public String getTemplateContent() {
         return templateContent;
@@ -43,19 +47,9 @@ public class SmsRequest implements Cloneable{
         this.templateContent = templateContent;
     }
 
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-
-
-//    public SmsRequest(Long userPhone, String content, String templateContent) {
-//        this.userPhone = userPhone;
-//        this.content = content;
-//        this.templateContent = templateContent;
-//    }
-
-    public SmsRequest(Long userPhone, String templateContent) {
+    public SmsRequest(Long userPhone, Integer type,  String templateContent) {
         this.userPhone = userPhone;
+        this.type = type;
         this.templateContent = templateContent;
     }
 
@@ -81,19 +75,12 @@ public class SmsRequest implements Cloneable{
         return clone;
     }
 
-//    @Override
-//    public String toString() {
-//        return "SmsRequest{" +
-//                "userPhone=" + userPhone +
-//                ", content='" + content + '\'' +
-//                '}';
-//    }
-
     @Override
     public String toString() {
         return "SmsRequest{" +
                 "userPhone=" + userPhone +
                 ", templateContent='" + templateContent + '\'' +
+                ", type=" + type +
                 '}';
     }
 }

@@ -34,22 +34,25 @@ public class OrderStateMachineConfig extends StateMachineConfigurerAdapter<Order
         transitions
                 .withExternal().source(OrderState.ORDER_WAIT_PAY)
                 .target(OrderState.ORDER_WAIT_SEND)
-                .event(OrderStateChangeAction.PAY_ORDER)
+                .event(OrderStateChangeAction.PAY_ORDER) //通过PAY_ORDER事件将待支付改为待发货
                 .and()
                 .withExternal().source(OrderState.ORDER_WAIT_SEND)
                 .target(OrderState.ORDER_WAIT_RECEIVE)
-                .event(OrderStateChangeAction.SEND_ORDER)
+                .event(OrderStateChangeAction.SEND_ORDER)//通过SEND_ORDER事件将待发货改为待收货
                 .and()
                 .withExternal().source(OrderState.ORDER_WAIT_RECEIVE)
                 .target(OrderState.ORDER_FINISH)
-                .event(OrderStateChangeAction.RECEIVE_ORDER)
+                .event(OrderStateChangeAction.RECEIVE_ORDER)//通过ORDER_FINISH事件将待收货改为订单完成
                 ;
     }
 
+    /**
+     * 状态机redis持久化
+     * @return RedisStateMachinePersister
+     */
     @Bean
     //@Bean("stateMachineRedisPersister")
     public RedisStateMachinePersister<OrderState, OrderStateChangeAction> getRedisPersister() {
-        //状态机redis持久化
         RedisStateMachineContextRepository<OrderState, OrderStateChangeAction> repository
                 = new RedisStateMachineContextRepository<>(redisConnectionFactory);
         RepositoryStateMachinePersist<OrderState, OrderStateChangeAction> persist

@@ -11,7 +11,7 @@ public class SmsService {
     private final static String COUPON = "coupon";
 
     public static void main(String[] args) throws CloneNotSupportedException {
-        SmsTemplate smsTemplate = new SmsTemplate("1",
+        SmsTemplate smsTemplate = new SmsTemplate("1", 1,
                 "尊敬到{name}先生/女士，您的{coupon}元优惠券已发放到您到券包中，请登录添可小程序查看。");
 
         Map<String, Map<String, String>> variablesMap  = new HashMap<>();
@@ -37,7 +37,7 @@ public class SmsService {
      */
     public static void sendSms (Map<String, Map<String, String>> variablesMap, SmsTemplate template) throws CloneNotSupportedException {
         String templateContent = template.getTemplateContent();
-        SmsRequest prototype = new SmsRequest(null, templateContent);//创建原型对象
+        SmsRequest prototype = new SmsRequest(null, template.getType(), templateContent);//创建原型对象
 
         for (Map.Entry<String, Map<String, String >> entry : variablesMap.entrySet()) {
             String phoneNumber = entry.getKey();

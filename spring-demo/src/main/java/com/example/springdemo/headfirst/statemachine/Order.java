@@ -3,8 +3,14 @@ package com.example.springdemo.headfirst.statemachine;
 
 public class Order {
 
+    /**
+     * 订单id
+     */
     private String orderId;
 
+    /**
+     * 订单类型
+     */
     private OrderState orderState;
 
     public String getOrderId() {
