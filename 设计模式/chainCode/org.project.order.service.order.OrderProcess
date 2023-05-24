@@ -1,0 +1,9 @@
+org.project.order.service.order.process.BeforeOrderProcess ##订单前置数据处理
+org.project.order.service.order.process.DeductStockOrderProcess ##扣减商品库存
+org.project.order.service.order.process.ActivityOrderProcess ##活动处理
+org.project.order.service.order.process.CouponOrderProcess ##优惠券处理
+org.project.order.service.order.process.ShippingFeeOrderProcess ##运费处理
+org.project.order.service.order.process.IntegralOrderProcess ##积分处理
+org.project.order.service.order.process.ECardOrderProcess ##E卡处理
+org.project.order.service.order.process.OrderPriceCalculateOrderProcess ##订单金额计算处理
+org.project.order.service.order.process.FinishOrderProcess ##最终保存订单处理
