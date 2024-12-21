@@ -1,6 +1,5 @@
 package com.example.datastructure.base.stack;
 
-import org.omg.SendingContext.RunTime;
 
 import java.util.Scanner;
 

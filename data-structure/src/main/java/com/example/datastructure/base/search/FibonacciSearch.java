@@ -1,4 +1,4 @@
-package src.main.java.com.example.datastructure.base.search;
+package com.example.datastructure.base.search;
 
 import java.util.Arrays;
 
