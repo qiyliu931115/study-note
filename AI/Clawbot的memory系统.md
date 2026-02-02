@@ -63,3 +63,29 @@ USER.md记录着使用者的信息
 ```
 
 ![img_1.png](img/img_18.png)
+
+
+但是这样遍历文件的效率很低
+
+## 构建索引 indexing
+
+把记录进行embedding 构建索引
+
+机制：防抖debounce 间隔1.5s + delta thresholds (50条消息/10万个bytes)
+
+调用embedding模型将数据chunk
+
+然后向量化之后进行存储在本地数据库sqlite
+
+![img_1.png](img/img_19.png)
+
+
+memory_search 获取文档Title
+
+memory_get 获取文档内容
+
+## hybrid search （BM25 + Vector）
+
+向量相似度（语义匹配，措辞可以不同）
+
+BM25 关键词相关性（精确的词元，例如 ID、环境变量、代码符号）
