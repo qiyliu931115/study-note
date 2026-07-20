@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "spring-demo",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["-f", "D:/code/study-note/spring-demo/pom.xml", "spring-boot:run"],
+      "port": 8080
+    }
+  ]
+}

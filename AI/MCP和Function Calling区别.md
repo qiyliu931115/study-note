@@ -17,7 +17,7 @@ MCP：内置会话上下文（如conversation_id和history）
 开发者需手动实现多轮状态管理
 
 ```python
-# 伪代码：开发者需维护全局会话状态  
+# 伪代码：开发者需维护全局会话状态
 session_db = {}  # 用数据库/缓存存储会话历史  
 
 def handle_query(user_id, query):  
